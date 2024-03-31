@@ -1,0 +1,11 @@
+services:
+  lobehub:
+    container_name: lobe-chat
+    image: "lobehub/lobe-chat:latest"
+    ports:
+      - "3210:3210"
+    environment:
+      - OLLAMA_PROXY_URL=http://host.docker.internal:11434/v1
+    env_file:
+      - path: .env
+        required: true
